@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo "Building the application..."
                     sh "make -C main clean && make -C main hello_exec"
-                    sh "build PES2UG22CS256-1"  // Replace with your actual SRN
+                    
                 }
             }
         }
