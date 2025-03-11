@@ -13,8 +13,7 @@ pipeline {
             steps {
                 script {
                     echo "Running tests..."
-                    // Introducing an intentional error here
-                    sh "cd /var/jenkins_home/workspace/PES2UG22CS256/main/ && ./hello_exec_nonexistent"
+                    sh "cd /var/jenkins_home/workspace/PES2UG22CS256/main/ && ./hello_exec"
                 }
             }
         }
