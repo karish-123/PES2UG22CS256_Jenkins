@@ -1,26 +1,22 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 script {
                     echo "Building the application..."
-                    sh "make -C main clean && make -C main hello_exec"
-                    
+                    sh "make -C main"
                 }
             }
         }
-
         stage('Test') {
             steps {
                 script {
                     echo "Running tests..."
-                    sh "./main/hello_exec"
+                    sh "cd /var/jenkins_home/workspace/PES2UG22CS256/main/ && ./hello_exec"
                 }
             }
         }
-
         stage('Deploy') {
             steps {
                 script {
@@ -30,7 +26,6 @@ pipeline {
             }
         }
     }
-
     post {
         failure {
             echo "Pipeline failed"
